@@ -2,6 +2,7 @@
 # R - Read (ler/consultar um registro)
 # U - Update (atualizar um registro)
 # D - Delete (excluir um registro do banco)
+#===============================================
 import peewee
 from models import contato,telefones
 
