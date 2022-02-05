@@ -65,6 +65,13 @@ def print_menu(titulo,lista):
    for i in lista:
        print(i)
 
+def listar_tabela_telefone():
+   fones=[]
+   res = telefones.select()
+   for i in res:
+       fones.append([i.numero,i.descricao])
+   return fones
+
 def consulta_por_nome(nome):
     fones=[]
     res = telefones.select().join(contato).where(contato.nome==nome)
@@ -190,7 +197,9 @@ def menuprincipal():
         elif op==3:
             atualizar()
         elif op==4:
-            break
+           a= listar_tabela_telefone()
+           print(a)
+           print(type(a))
         
 
 def main():

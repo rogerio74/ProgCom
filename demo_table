@@ -1,0 +1,24 @@
+import PySimpleGUI as sg
+from agenda_crud import *
+
+dados = listar_tabela_telefone()
+#print (dados)
+
+cabecalho = ['Telefone','Descrição']
+layout = [
+    [sg.Table(values=dados,headings=cabecalho,max_col_width=35,
+    auto_size_columns=True,
+    display_row_numbers=True,
+    justification='left',
+    num_rows=5,
+    key='-tabela-',
+    row_height=35)
+        
+    ]
+]
+janela = sg.Window("Teste",layout)
+while True:
+    event,values = janela.read()
+    if event == "Exit" or event == sg.WIN_CLOSED:
+        break
+janela.close()
